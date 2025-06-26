@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import Banner from './Componentes/Banner';
+import Formulario from './Componentes/Formulario';
 
 function App() {
+
+
+  const [pokemons, setPokemon] = useState([]);
+  const  aoPokemonAdicionado= (pokemon) => {
+    console.log(pokemon);
+    setPokemon([...pokemons, pokemon]);
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Banner/>
+      <Formulario aoPokemonCadastrado = {pokemon => aoPokemonAdicionado(pokemon)} />
+      
     </div>
   );
 }

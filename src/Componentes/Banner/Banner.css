@@ -1,0 +1,9 @@
+.banner{
+    text-align: center;
+    background-color: blanchedalmond;
+}
+
+.banner img {
+    width: 100%;
+    max-width: 100%;
+}
