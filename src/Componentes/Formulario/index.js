@@ -7,29 +7,6 @@ import { useState } from 'react'
 
 const Formulario = (props) => {
 
-    const tipos = [
-        'Grama',
-        'Fogo',
-        'Água',
-        'Elétrico',
-        'Psíquico',
-        'Gelo',
-        'Dragão',
-        'Noturno',
-        'Inseto',
-        'Terrestre',
-        'Voador',
-        'Metálico',
-        'Fada',
-        'Fantasma',
-        'Pedra',
-        'Lutador',
-        'Normal',
-        'Veneno',
-        'Aço',
-        'Sombrio',
-    ]
-
     const [nome, setNome]= useState('')
     const [imagem, setImagem] = useState('')
     const [tipo, setTipo] = useState('')
@@ -41,8 +18,10 @@ const Formulario = (props) => {
             imagem,
             tipo
         });
+        setNome('');
+        setImagem('');
+        setTipo('');
     }
-
 
     return (
         <section className='formulario'>
@@ -67,8 +46,9 @@ const Formulario = (props) => {
 
                 <ListaSuspensa 
                     label="Tipo" 
-                    itens = {tipos} 
+                    itens = {props.tipos} 
                      obrigatorio={true}
+                     valor={tipo}
                     aoAlterado={valor => setTipo(valor)}
                 />
 
